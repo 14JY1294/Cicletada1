@@ -32,8 +32,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
 	});
+</script>
+<!-- Ingreso de grafico para conectar con base de datos -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['edades', 'menor a mayor'],
+		  ['10 a 19',     5],
+          ['20 a 29',     11],
+          ['30 a 39',      15],
+          ['40 a 49',  6],
+          ['50 a 60', 3],
+        ]);
+
+        var options = {
+          title: 'Grafico Etario de participantes'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
 </script>	
-<!--pop-up-->
+<!--fin de grafico jscrip-->
 <script src="js/menu_jquery.js"></script>
 <!--//pop-up-->	
 </head>
@@ -221,8 +247,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="welcome-info">
 				<h2>Welcome</h2>
-				<h5>Lorem ipsum dolor sit amet consectetur adipiscing elit.</h5>
-				<p>Morbi condimentum imperdiet placerat. Nullam in nisl eget turpis convallis venenatis. Cras cursus elementum justo nec bibendum. Donec quis nisi cursus, vestibulum elit eget, sagittis ligula.</p>
+				<div id="piechart" style="width: 900px; height: 500px;"></div>
+				<h5>Llevamos registro de todos nuestros participantes: Registrate para participar con nosotros, tenemos muchos aupicadores que estaran encantado de que lleves su camiseta.</h5>
 			</div>
 		</div>
 		<!-- //container -->
