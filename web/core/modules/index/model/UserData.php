@@ -3,17 +3,17 @@ class UserData {
 	public static $tablename = "usuario";
 
 	public function UserData(){
-		$this->nombre = "";
-		$this->apellido = "";
 		$this->username = "";
 		$this->password = "";
-		$this->activado = "0";
-		$this->creado = "NOW()";
+		$this->email = "";		
+		$this->activado = 0;
+		$this->id = 0;
+		$this->es_admin = 0;
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (nombre,apellido,username,password,activado,es_admin,creado) ";
-		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->username\",\"$this->password\",$this->activado,$this->es_admin,$this->creado)";
+		$sql = "insert into ".self::$tablename." (username,password,email,activado,es_admin) ";
+		$sql .= "values (\"$this->username\",\"$this->password\",\"$this->email\",$this->activado,$this->es_admin)";
 		Executor::doit($sql);
 	}
 
@@ -28,7 +28,7 @@ class UserData {
 
 
 	public function update(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",apellido=\"$this->apellido\",username=\"$this->username\",password=\"$this->password\",activado=$this->activado,es_admin=$this->es_admin where id=$this->id";
+		$sql = "update ".self::$tablename." set username=\"$this->username\",password=\"$this->password\",activado=$this->activado,es_admin=$this->es_admin where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -38,15 +38,13 @@ class UserData {
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where id=$id";
+		$sql = "select * from ".self::$tablename." where username=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new UserData());
 	}
 
-
-
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by creado desc";
+		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new UserData());
 	}

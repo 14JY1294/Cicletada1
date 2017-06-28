@@ -24,7 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 <!-- //fonts -->
 <script src="js/jquery-1.11.1.min.js"> </script>	
-<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.js"></script>    
+<script type="text/javascript" src="webcamjs/webcam.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -128,7 +129,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</li>	
 							<li><a href="#news" class="scroll">Eventos</a></li>
 							<li><a href="index.php?view=newregistration">Registro</a></li>
-							<li><a href="index.php?view=home">Estadisticas</a></li>
+							<li><a href="index.php?view=home">Estadisticas</a></li>							
+							<li><a href="index.php?view=loginadmin">Login</a></li>
+							
+							<li><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración<span class="caret"></span></a>
+								<ul class="dropdown-menu">									
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=users">Usuarios</a></li>																	
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=eventos">Eventos</a></li> 
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Paises</a></li>									
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Categorias</a></li> 
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Distancias</a></li>
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Grupos Sangre</a></li>
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Ciudades</a></li>
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Provincias</a></li>
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Regiones</a></li>
+									<li><a class="hvr-bounce-to-bottom" href="index.php?view=home">Paises</a></li>								
+								</ul>
+							</li>
+							
 						</ul>
 						
 						<div class="clearfix"> </div>
@@ -159,9 +177,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										
 									});
 								</script>
-									<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<!-- content-Get-in-touch -->
-	
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!-- content-Get-in-touch -->	
 
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>

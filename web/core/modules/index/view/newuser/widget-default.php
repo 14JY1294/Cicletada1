@@ -1,22 +1,12 @@
+
 <div class="row">
+<p></p>
 	<div class="col-md-12">
+	<p></p>
 	<h1>Agregar Usuario</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=adduser" role="form">
+		<form class="form-horizontal" method="post" id="adduser" action="index.php?view=adduser" role="form">
 
-
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
-    <div class="col-md-6">
-      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
-    <div class="col-md-6">
-      <input type="text" name="apellido" required class="form-control" id="apellido" placeholder="Apellido">
-    </div>
-  </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
     <div class="col-md-6">
@@ -33,16 +23,16 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Contrase&ntilde;a</label>
     <div class="col-md-6">
-      <input type="password" name="password" class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
+      <input type="password" name="password" class="form-control" id="password" placeholder="Contrase&ntilde;a" required>
     </div>
   </div>
-
+  					
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Es administrador</label>
     <div class="col-md-6">
 <div class="checkbox">
     <label>
-      <input type="checkbox" name="is_admin"> 
+      <input type="checkbox" name="es_admin" id="es_admin"> 
     </label>
   </div>
     </div>

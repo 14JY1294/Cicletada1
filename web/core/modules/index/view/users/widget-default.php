@@ -1,25 +1,10 @@
 <div class="row">
 	<div class="col-md-12">
+	<br></br>
 	<a href="index.php?view=newuser" class="btn btn-default pull-right"><i class='glyphicon glyphicon-user'></i> Nuevo Usuario</a>
-		<h1>Lista de Usuarios</h1>
+	<h1>Usuarios</h1>
 <br>
-		<?php
-		/*
-		$u = new UserData();
-		print_r($u);
-		$u->name = "Agustin";
-		$u->lastname = "Ramos";
-		$u->email = "evilnapsis@gmail.com";
-		$u->password = sha1(md5("l00lapal00za"));
-		$u->add();
-
-
-		$f = $u->createForm();
-		print_r($f);
-		echo $f->label("name")." ".$f->render("name");
-		*/
-		?>
-		<?php
+	<?php
 
 		$users = UserData::getAll();
 		if(count($users)>0){
@@ -27,8 +12,7 @@
 			?>
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Nombre completo</th>
-			<th>Nick</th>
+			<th>UserName</th>
 			<th>Email</th>
 			<th>Activo</th>
 			<th>Admin</th>
@@ -38,9 +22,8 @@
 			foreach($users as $user){
 				?>
 				<tr>
-				<td><?php echo $user->nombre." ".$user->apellido; ?></td>
-				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->username; ?></td>
+				<td><?php echo $user->email; ?></td>			
 				<td>
 					<?php if($user->activado):?>
 						<i class="glyphicon glyphicon-ok"></i>

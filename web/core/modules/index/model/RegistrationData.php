@@ -31,7 +31,7 @@ class RegistrationData {
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where rut=$rut";
+		$sql = "select * from ".self::$tablename." where rut=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new RegistrationData());
 	}

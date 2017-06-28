@@ -6,7 +6,7 @@ $user = $_POST['mail'];
 $pass = sha1(md5($_POST['password']));
 $base = new Database();
 $con = $base->connect();
-$sql = "select * from usuario where (email= \"".$user."\" or username= \"".$user."\") and password= \"".$pass."\" and activado=1 and cod_rol=1";
+$sql = "select * from usuario where username= \"".$user."\" and password= \"".$pass."\" and activado=1 and cod_rol=1";
 //print $sql;
 $query = $con->query($sql);
 $found = false;
@@ -25,7 +25,7 @@ if($found==true) {
 	print "Cargando ... $user";
 	print "<script>window.location='index.php?view=home';</script>";
 }else {
-	print "<script>window.location='index.php?view=login';</script>";
+	print "<script>window.location='index.php?view=loginadmin';</script>";
 }
 
 }else{
